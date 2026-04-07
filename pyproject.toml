@@ -71,3 +71,15 @@ addopts = "--cov=driftwatch --cov-report=term-missing"
 
 [tool.coverage.run]
 source = ["src/driftwatch"]
+omit = [
+    "src/driftwatch/__main__.py",
+    "tests/*",
+]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "if __name__ == .__main__.:",
+    "raise NotImplementedError",
+    "@(abc\\.)?abstractmethod",
+]
